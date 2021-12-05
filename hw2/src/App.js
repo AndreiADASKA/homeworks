@@ -20,14 +20,13 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      arr: listNumbers.length,
+      arr: listNumbers,
     };
   }
 
   handleClick = () => {
     listNumbers.push(getRamdonInt(0, 3333));
-    this.setState({ arr: listNumbers.length });
-    console.log('yflf');
+    this.setState({ arr: listNumbers });
     document.querySelector('header').style.backgroundColor = 'red';
   };
 
