@@ -1,0 +1,17 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: blueviolet;
+  min-height: 100vh;
+}
+
+button {
+  display: block;
+  width: 300px;
+  min-height: 60px;
+  background-color: brown;
+  color: white;
+  font-size: 30px;
+  color: g;
+}
