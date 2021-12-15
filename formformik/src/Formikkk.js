@@ -12,7 +12,7 @@ export default class Formikkk extends Component {
           children: '',
           dateIn: '',
           dateOut: '',
-          smoking: 'некурящий',
+          smoker: 'некурящий',
           prepayment: false,
         }}
         onSubmit={(formValues) => alert(JSON.stringify(formValues))}
@@ -58,11 +58,11 @@ export default class Formikkk extends Component {
 
             <div className="smoke">
               <label>
-                <Field type="radio" name="smoking" value="курящий" />
+                <Field type="radio" name="smoker" value="курящий" />
                 Номер для курящих
               </label>
               <label>
-                <Field type="radio" name="smoking" value="некурящий" />
+                <Field type="radio" name="smoker" value="некурящий" />
                 Номер для некурящих
               </label>
             </div>
