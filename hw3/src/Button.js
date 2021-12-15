@@ -1,10 +1,16 @@
 import React, { Component } from 'react';
 
-class Button extends Component {
+export default class Button extends Component {
+  shouldComponentUpdate(nextProps) {
+    if (nextProps.color === 'yellow') {
+      alert('yellow');
+      return false;
+    }
+    return true;
+  }
+
   render() {
-    const { text, style } = this.props;
-    return <button style={style}>{text}</button>;
+    const { color } = this.props;
+    return <button style={{ backgroundColor: color }}>Кнопка</button>;
   }
 }
-
-export default Button;

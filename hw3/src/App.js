@@ -1,70 +1,34 @@
-import './App.css';
 import React, { Component } from 'react';
 import Button from './Button';
 
+const COLORS = ['red', 'green', 'blue', 'black', 'pink', 'yellow', 'tomato', 'grey', 'purple'];
+
 function getRandomNumber(min, max) {
-  return Math.round(Math.random() * (max - min + 1) + min);
+  return Math.round(Math.random() * (max - min) + min);
 }
 
-const colorsBtn = [
-  'red',
-  'blue',
-  'yellow',
-  'black',
-  'orange',
-  'chartreuse',
-  'gold',
-  'grey',
-  // 'white',
-];
-
 export default class App extends Component {
-  constructor(props) {
-    super(props);
-
+  constructor() {
+    super();
     this.state = {
-      bgColor: '',
-      bgBody: '',
+      color: '',
     };
   }
 
   componentDidMount() {
     setInterval(() => {
+      const randomColorIndex = getRandomNumber(0, COLORS.length - 1);
+
+      const randomColor = COLORS[randomColorIndex];
+
       this.setState({
-        color: colorsBtn[getRandomNumber(0, colorsBtn.length)],
+        color: randomColor,
       });
-      if (this.state.color === 'yellow') alert('yellow');
     }, 1000);
   }
 
   render() {
-    return (
-      <Button text="Кнопка1" style={{ backgroundColor: this.state.color }} />
-    );
+    const { color } = this.state;
+    return <Button color={color} />;
   }
-
-  ////////////Второй вариант
-  // componentDidMount() {
-  //   setInterval(() => {
-  //     this.setState({
-  //       bgColor: colorsBtn[getRandomNumber(0, colorsBtn.length)],
-  //       bgBody:
-  //         colorsBtn[getRandomNumber(0, getRandomNumber(0, colorsBtn.length))],
-  //       ff: 'black',
-  //     });
-  //     document.querySelector(
-  //       'button'
-  //     ).style.backgroundColor = `${this.state.bgColor} `;
-  //     document.querySelector(
-  //       'body'
-  //     ).style.backgroundColor = `${this.state.bgBody} `;
-
-  //     if (this.state.bgColor === 'yellow') alert('yellow');
-  //   }, 1000);
-  // }
-
-  // render() {
-  //   return <Button text="Кнопка2" />;
-  // }
-  // ////////////////////////////////////////////////////////////
 }
