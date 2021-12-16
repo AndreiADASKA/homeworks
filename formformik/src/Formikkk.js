@@ -28,6 +28,7 @@ export default class Formikkk extends Component {
               <div>
                 <label htmlFor="">Количество взрослых</label>
                 <Field as="select" name="adults">
+                  <option value="0">Отсутсвуют</option>
                   <option value="1">один</option>
                   <option value="2">два</option>
                   <option value="от 2х до 5">от двух до пяти</option>
@@ -37,6 +38,7 @@ export default class Formikkk extends Component {
               <div>
                 <label htmlFor="">Количество детей</label>
                 <Field as="select" name="children">
+                  <option value="0">Отсутсвуют</option>
                   <option value="1">один</option>
                   <option value="2">два</option>
                   <option value="от 3х до 5">от трех до пяти</option>
